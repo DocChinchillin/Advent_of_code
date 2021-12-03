@@ -2,9 +2,9 @@ def main():
     with open('input.txt') as f:
         lines = f.readlines()
 
-    nums = [int(line.replace("\n","")) for line in lines]
+    nums = [int(line) for line in lines]
 
-    count =  len([i for i in range(1,len(nums)) if nums[i-1]<nums[i]])
+    count =  sum([nums[i - 1] < nums[i] for i in range(1,len(nums))])
     
     print(count)
 

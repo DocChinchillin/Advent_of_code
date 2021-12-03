@@ -4,9 +4,9 @@ def main():
 
     nums = [int(line.replace("\n","")) for line in lines]
 
-    sums =  [nums[i-2]+nums[i-1]+nums[i] for i in range(2,len(nums))]
+    sums =  [nums[i - 2] + nums[i - 1] + nums[i] for i in range(2,len(nums))]
 
-    count =  len([i for i in range(1,len(sums)) if sums[i-1]<sums[i]])
+    count =  len([i for i in range(1,len(sums)) if sums[i - 1] < sums[i]])
     
     print(count)
 
