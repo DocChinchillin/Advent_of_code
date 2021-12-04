@@ -23,14 +23,13 @@ def reduction(stevila,con):
     return int(stevila[0],2)
 
 def main():
+
     with open('input.txt') as f:
-        lines = f.readlines()
+        lines = f.read().splitlines()
     
-    
-    st_ox = [line.replace("\n","") for line in lines]
+    st_ox = [line for line in lines]
     st_co = st_ox.copy()
 
-    
     ox = reduction(st_ox,True)
     co = reduction(st_co,False)
 
