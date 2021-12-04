@@ -1,3 +1,5 @@
+import time
+
 def main():
     with open('input.txt') as f:
         lines = f.read().splitlines()
@@ -30,4 +32,7 @@ def main():
     print(gamma * epsi) # 741950
 
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    print(f"Time is : {end - start}")

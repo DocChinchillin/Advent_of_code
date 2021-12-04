@@ -1,3 +1,5 @@
+import time
+
 def main():
     with open('input.txt') as f:
         lines = f.readlines()
@@ -24,4 +26,7 @@ def main():
     print(pos * depth)
 
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    print(f"Time is : {end - start}")

@@ -1,3 +1,5 @@
+import time
+
 def reduction(stevila,con):
     vsota = 0
     stevka_len = len(stevila)
@@ -36,4 +38,7 @@ def main():
     print(ox * co )  #903810
 
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    print(f"Time is : {end - start}")

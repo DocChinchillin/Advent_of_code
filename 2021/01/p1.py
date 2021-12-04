@@ -1,6 +1,8 @@
+import time
+
 def main():
     with open('input.txt') as f:
-        lines = f.readlines()
+        lines = f.read().splitlines()
 
     nums = [int(line) for line in lines]
 
@@ -9,4 +11,7 @@ def main():
     print(count)
 
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    print(f"Time is : {end - start}")
