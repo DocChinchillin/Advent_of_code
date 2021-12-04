@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 def main():
     with open("input.txt") as f:
@@ -50,4 +51,7 @@ def calcWin(board):
     return vsota
 
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    print(f"Time is : {end - start}")

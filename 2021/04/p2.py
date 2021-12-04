@@ -64,4 +64,7 @@ def calcWin(board):
     return vsota
 
 if __name__ == "__main__":
+    start = time.time()
     main()
+    end = time.time()
+    print(f"Time is : {end - start}")
