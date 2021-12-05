@@ -36,4 +36,4 @@ if __name__ == "__main__":
     start = time.time()
     main()
     end = time.time()
-    print(f"Time is : {end - start}") #Time is : 0.06264328956604004
+    print(f"Time is : {end - start}") #Time is : 0.024933338165283203
