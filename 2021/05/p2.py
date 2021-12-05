@@ -5,8 +5,7 @@ def main():
     with open("input.txt") as f:
     	lines = f.read().splitlines()
 
-    poti = np.zeros([len(lines),4])
-    poti = poti.astype(int)
+    poti = (np.zeros([len(lines),4])).astype(int)
     
     for i,line in enumerate(lines):
         a,b = line.split(" -> ")
@@ -21,8 +20,7 @@ def main():
     #print(f"Y gre od {minY} do {maxY}")
     mapa = np.zeros([maxY + 1,maxX + 1])
     
-    for pot in poti:
-        y0,y1,x0,x1 = pot
+    for y0,y1,x0,x1 in poti:
         #print(f"Y: {y0} {y1}, X: {x0} {x1}")
         #print(f"Od: {y0} {x0}, X: {y1} {x1}")
         #mapa = np.zeros([maxY+1,maxX+1])
@@ -50,8 +48,6 @@ def main():
             np.add.at(mapa,((ranX),(ranY)),1)
 
         #print(mapa)
-    
-    
     print((mapa > 1).sum()) #16793
 
 if __name__ == "__main__":
