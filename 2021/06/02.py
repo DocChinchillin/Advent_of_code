@@ -19,11 +19,11 @@ def main():
         c = np.roll(c,-1)
         babies = np.roll(babies,-1)
 
-    print(sum(c) + sum(babies))
+    print(sum(c) + sum(babies)) # 1743335992042
         
 
 if __name__ == "__main__":
     start = time.time()
     main()
     end = time.time()
-    print(f"Time is : {end - start}")
+    print(f"Time is : {end - start}") Time is : 0.0059626102447509766

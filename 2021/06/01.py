@@ -11,11 +11,12 @@ def main():
         fish = np.append(fish,np.array(c*[8],dtype = "byte"))
         c = np.count_nonzero(fish==0)
         fish = np.where(fish >= 0, fish , fish+7)
-    print(len(fish))
+        
+    print(len(fish)) #5934
         
 
 if __name__ == "__main__":
     start = time.time()
     main()
     end = time.time()
-    print(f"Time is : {end - start}")
+    print(f"Time is : {end - start}") #Time is : 0.003057241439819336
