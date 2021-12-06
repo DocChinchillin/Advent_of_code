@@ -5,6 +5,8 @@ def main():
     with open("input") as f:
         fish = np.array(f.read().splitlines()[0].split(","),dtype = np.int64)
 
+    #fish = np.loadtxt("input", dtype=np.int64, delimiter=",") #slower
+
     c = np.array(range(0,7), dtype = np.int64)
     babies = np.zeros_like(range(0,4), dtype = np.int64)
 
@@ -26,4 +28,4 @@ if __name__ == "__main__":
     start = time.time()
     main()
     end = time.time()
-    print(f"Time is : {end - start}") Time is : 0.0059626102447509766
+    print(f"Time is : {end - start}") #Time is : 0.0059626102447509766
