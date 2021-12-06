@@ -3,7 +3,7 @@ import time
 
 def main():
     with open("input.txt") as f:
-    	lines = f.read().splitlines()
+        lines = f.read().splitlines()
     
     bingos = lines[0].split(",")
 

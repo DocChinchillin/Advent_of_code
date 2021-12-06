@@ -3,8 +3,7 @@ import numpy as np
 
 def main():
     with open("input.txt") as f:
-    	lines = f.read().splitlines()
-
+        lines = f.read().splitlines()
     poti = (np.zeros([len(lines),4])).astype(int)
     
     for i,line in enumerate(lines):
