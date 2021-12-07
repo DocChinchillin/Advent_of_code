@@ -21,7 +21,7 @@ def main():
             delni[j] = np.sum(range_ar[0:delni[j]+1])     #izračun naraščojoče cene premika
         move_cost.append(sum(delni * initial_count))  #vsota cene (goriva) za premik na trenutni index
 
-    print(min(move_cost))
+    print(min(move_cost)) #98231647
 
 
 if __name__ == "__main__":

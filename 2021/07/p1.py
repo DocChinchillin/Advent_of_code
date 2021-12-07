@@ -6,7 +6,7 @@ def main():
         crabs = np.array(f.read().splitlines()[0].split(","),dtype = "int16")
 
     cost = sum(abs(crabs - (np.median(crabs))))
-    print(cost)
+    print(cost) #348996
 
     ### Loop way
 
