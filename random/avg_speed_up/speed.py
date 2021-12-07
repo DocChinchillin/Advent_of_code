@@ -16,7 +16,7 @@ def main():
 
 def avg(name,i,postfix):
     with open(f"{name}{i}{postfix}") as f:
-    	times = f.read().splitlines()
+        times = f.read().splitlines()
 
     times = list(filter(bool,times))
 

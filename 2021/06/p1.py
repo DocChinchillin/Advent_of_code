@@ -2,7 +2,7 @@ import time
 import numpy as np
 
 def main():
-    with open("test") as f:
+    with open("input") as f:
         fish = np.array(f.read().splitlines()[0].split(","),dtype = "byte")
     c = 0
     
