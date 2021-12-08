@@ -1,9 +1,8 @@
 import time
-import numpy as np
 
 def main():
     with open("input") as f:
-        digits = np.array(f.read().splitlines())
+        digits = f.read().splitlines()
 
     sum = 0
     for digit in digits:
@@ -25,44 +24,36 @@ def main():
             if len(out) == 4:
                 four = set(out)
             
-            if len(out) == 5:
+            if len(out) == 5:               #napolnimo seznam five z unikatnimi seti crk z petimi segmenti
                 if set(out) not in five:
-                    five.append(set(out))
+                    five.append(set(out))   
 
             if len(out) == 6:
-                if set(out) not in six:
+                if set(out) not in six:     #napolnimo seznam six z unikatnimi seti crk z seštimi segmenti
                     six.append(set(out))
 
             if len(out) == 7:
                 all = set(out) #all = osem
 
         top = seven - one 
-        bottom = all - (four.union(top))
+        bottom = all - (four.union(top))        #delni bottom, imamo dve criki bottom in bot_left
         
         for s in six:
-            bottom = bottom.intersection(s)
+            bottom = bottom.intersection(s)     #izluscimo bottom
             if len(s.intersection(one))==1:
-                bot_right = s.intersection(one)
+                bot_right = s.intersection(one) 
                 
 
         top_right = one - bot_right
         bot_left = all - four.union(top) - bottom
 
-        sredina = all - bottom - seven - bot_left  #delna sredina, imamo dve crki sredino in top left
+        sredina = all - bottom - seven - bot_left       #delna sredina, imamo dve crki sredino in top left
         for f in five:
-            sredina = sredina.intersection(f)       #locimo med sredino in top left
+            sredina = sredina.intersection(f)           #locimo med sredino in top left
         
-        top_left = all - bottom - seven  - bot_left  - sredina
+        top_left = all - bottom - seven  - bot_left  - sredina   #izracunamo se top left
         
         #print(f"{top} {top_left} {top_right} {sredina} {bot_left} {bot_right} {bottom}")
-
-        #print(f"0: {all - sredina}") #0
-        #print(one)
-        #print(all - top_left - bot_right)
-        
-        #print(f"6: {all - top_right}") #6
-
-        #print(f"9: {all - bot_left}") #9
 
         stevke = {
             frozenset(all - sredina) : "0",
