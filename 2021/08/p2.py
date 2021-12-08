@@ -48,11 +48,11 @@ def main():
         top_right = one - bot_right
         bot_left = all - four.union(top) - bottom
 
-        sredina = all - bottom - top - one - bot_left  #delna sredina, imamo dve crki sredino in top left
+        sredina = all - bottom - seven - bot_left  #delna sredina, imamo dve crki sredino in top left
         for f in five:
             sredina = sredina.intersection(f)       #locimo med sredino in top left
         
-        top_left = all - seven - bottom - bot_left  - sredina
+        top_left = all - bottom - seven  - bot_left  - sredina
         
         #print(f"{top} {top_left} {top_right} {sredina} {bot_left} {bot_right} {bottom}")
 

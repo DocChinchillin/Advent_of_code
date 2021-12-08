@@ -12,7 +12,7 @@ def main():
         #inputs = np.array(input.split(" "))
         outputs = np.array(output.split(" "))
         for out in outputs:
-            if len(out) in [2,3,4,7]:
+            if len(out) in {2,3,4,7}:
                 count+=1
 
     print(count) #392
