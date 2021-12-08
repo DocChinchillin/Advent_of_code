@@ -36,7 +36,7 @@ def main():
                 all = set(out) #all = osem
 
         top = seven - one 
-        bottom = all - (four.union(top))        #delni bottom, imamo dve criki bottom in bot_left
+        bottom = all - (four.union(top))        #delni bottom, imamo dve crki bottom in bot_left
         
         for s in six:
             bottom = bottom.intersection(s)     #izluscimo bottom
@@ -79,6 +79,7 @@ def main():
 
 if __name__ == "__main__":
     start = time.time()
-    main()
+    for _ in range(1):
+        main()
     end = time.time()
     print(f"Time is : {end - start}") 
