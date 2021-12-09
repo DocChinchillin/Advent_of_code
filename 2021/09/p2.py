@@ -4,9 +4,9 @@ import numpy as np
 def lowPoint(i,j,mat,imax,jmax):
     sred = mat[i,j]
 
-    if ((i - 1 >= 0 and mat[i - 1,j] <= sred) or 
+    if ((i - 1 >= 0 and mat[i - 1,j] <= sred)    or 
         (i + 1 <= imax and mat[i + 1,j] <= sred) or 
-        (j - 1 >= 0 and mat[i,j - 1] <= sred) or 
+        (j - 1 >= 0 and mat[i,j - 1] <= sred)    or 
         (j + 1 <= jmax  and mat[i,j + 1] <= sred)):
         return 0
     return (i,j)
