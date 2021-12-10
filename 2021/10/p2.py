@@ -12,22 +12,9 @@ def main():
             if char in {"(","[","{","<"}: stack.append(char)
             else:
                 opp = stack.pop()
-                if char == ")":
-                    if opp != "(":
-                        stack.append(char)
-                        break
-                elif char == "]":
-                    if opp != "[":
-                        stack.append(char)
-                        break
-                elif char == "}":
-                    if opp != "{":
-                        stack.append(char)
-                        break
-                elif char == ">":
-                    if opp != "<":
-                        stack.append(char)
-                        break
+                if getZaklep(opp) != char:
+                    stack.append(char)
+                    break
         if stack[-1] not in {")","]","}",">"}:
             incompletes.append(string)
     
@@ -38,8 +25,7 @@ def main():
         temp_score = 0
         for op in reversed(inc):
             temp_score *= 5
-            add = getCloser(op)
-            temp_score += add
+            temp_score += getCloser(op)
         total.append(temp_score)
 
     print(np.median(total))
