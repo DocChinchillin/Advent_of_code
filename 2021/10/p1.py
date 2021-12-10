@@ -5,6 +5,9 @@ def main():
     with open("input") as f:
         digits = np.array(f.read().splitlines())
 
+    points = {")": 3, "]":  57,"}": 1197, ">": 25137}
+    oklepaji ={ "(": ")", "[": "]","{": "}", "<": ">"}
+
     err = 0
     for string in digits:
         stack = []
@@ -12,23 +15,11 @@ def main():
             if char in {"(","[","{","<"}: stack.append(char)
             else:
                 opp = stack.pop()
-                if char != getZaklep(opp):
-                    err += priceER(char)
+                if char != oklepaji[opp]:
+                    err += points[char]
                     break
 
     print(err)
-
-def priceER(c):
-    if c == ")": return 3
-    if c == "]": return 57
-    if c == "}": return 1197
-    if c == ">": return 25137
-
-def getZaklep(c):
-    if c == "(": return ")"
-    if c == "[": return "]"
-    if c == "{": return "}"
-    if c == "<": return ">"
 
 if __name__ == "__main__":
     start = time.time()
