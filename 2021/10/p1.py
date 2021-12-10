@@ -12,22 +12,9 @@ def main():
             if char in {"(","[","{","<"}: stack.append(char)
             else:
                 opp = stack.pop()
-                if char == ")":
-                    if opp != "(":
-                        err += priceER(char)
-                        break
-                elif char == "]":
-                    if opp != "[":
-                        err += priceER(char)
-                        break
-                elif char == "}":
-                    if opp != "{":
-                        err += priceER(char)
-                        break
-                elif char == ">":
-                    if opp != "<":
-                        err += priceER(char)
-                        break
+                if char != getZaklep(opp):
+                    err += priceER(char)
+                    break
 
     print(err)
 
@@ -36,6 +23,12 @@ def priceER(c):
     if c == "]": return 57
     if c == "}": return 1197
     if c == ">": return 25137
+
+def getZaklep(c):
+    if c == "(": return ")"
+    if c == "[": return "]"
+    if c == "{": return "}"
+    if c == "<": return ">"
 
 if __name__ == "__main__":
     start = time.time()
