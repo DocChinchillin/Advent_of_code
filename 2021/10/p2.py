@@ -2,7 +2,7 @@ import time
 import numpy as np
 
 def main():
-    with open("test") as f:
+    with open("input") as f:
         digits = np.array(f.read().splitlines())
 
     points = {"(": 1, "[":  2,"{": 3, "<": 4}
