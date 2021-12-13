@@ -15,17 +15,16 @@ def main():
 
     folds = temp
 
-    y = None
-    x = None
+    y = x = None
     i = 0
     while y == None or x == None:
         smer,index = folds[i].split("=")
-        if smer == "y":
-            y = int(index)*2+1
-        if smer == "x":
-            x = int(index)*2+1
+        if y==None and smer == "y":
+            y = int(index) * 2 + 1
+        if x==None and smer == "x":
+            x = int(index) * 2 + 1
         i+=1
-
+        
     mat = np.zeros((y,x))
     for dot in dots:
         kord = tuple(dot.split(","))

@@ -7,22 +7,21 @@ def main():
    
     sp = lines.index("")
     dots = lines[:sp]
-    folds = lines[sp+1:]
+    folds = lines[sp + 1:]
 
     temp = []
     for fold in folds:
         temp.append(fold.strip("fold along "))
     folds = temp
 
-    y = None
-    x = None
+    y = x = None
     i = 0
     while y == None or x == None:
         smer,index = folds[i].split("=")
-        if smer == "y":
-            y = int(index)*2+1
-        if smer == "x":
-            x = int(index)*2+1
+        if y==None and smer == "y":
+            y = int(index) * 2 + 1
+        if x==None and smer == "x":
+            x = int(index) * 2 + 1
         i+=1
 
     mat = np.zeros((y,x))
@@ -34,6 +33,7 @@ def main():
     for f in folds:
         smer,index = f.split("=")
         index = int(index)
+
         if smer == "y":
             mat = np.delete(mat,index,0) #y
             ar1,ar2 = np.vsplit(mat,2)
