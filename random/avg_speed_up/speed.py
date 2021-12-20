@@ -4,8 +4,8 @@ def main():
     end = int(input("End index: "))
     print()
     for i in range(st,end+1):
-        gpu = avg("./inputs/sGPU_",i,".out")
-        cpu = avg("./inputs/sCPU_",i,".out")
+        gpu = avg("./out/GPU",i,".out")
+        cpu = avg("./out/CPU",i,".out")
 
         print(f"Primer {i}")
         print(f"CPU time: {cpu}")
