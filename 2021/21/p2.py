@@ -15,8 +15,6 @@ def memoize(func):
         return result
     return memoized_func
 
-cache = dict()
-
 
 def main():
     
