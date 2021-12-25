@@ -38,11 +38,11 @@ def subVersion(sub):
             start_i = 22 
             L =  int("".join(sub[7:7+15]),2)
             l = 22 + L
-            while start_i < len(sub):
+            while start_i < l:
                 ver,leng = subVersion(sub[start_i:])
                 total_ver += ver
                 start_i += leng
-            start_i = len(sub)
+            
         else:
             L =  int("".join(sub[7:7+11]),2)
             start_i = 18
