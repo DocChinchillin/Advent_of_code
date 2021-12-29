@@ -35,15 +35,12 @@ def move(sizey,sizex, mat, kord,smer):
     lokacije = zip(kord[0],kord[1])
     for a,b in lokacije:
         if smer == 'v':
-            if a + 1 < sizey:
-                mat[a+1][b] = 'v'
-            else:
-                mat[0][b] = 'v'
+            p = a+1 if a + 1 < sizey else 0
+            mat[p][b] = 'v'
         else:
-            if b + 1 < sizex:
-                mat[a][b+1] = '>'
-            else:
-                mat[a][0] = '>'
+            p = b+1 if b + 1 < sizex else 0
+            mat[a][p] = '>'
+           
         mat[a][b] = '.'
 
 def find_moves(sizey, sizex, mat,smer):
