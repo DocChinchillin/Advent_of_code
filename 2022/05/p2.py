@@ -9,25 +9,24 @@ def main():
     movements,boxs = lines[lines.index("")+1:],lines[:lines.index("")]
 
     boxs.reverse()
-    col = [ [] for a in boxs[0].replace(" ","")]
+    col = [[] for i in range(int(boxs[0][-2]))]
     
 
     for row in boxs[1:]:
-        parts = [row[i:i+3] for i in range(0, len(row), 4)]
+        parts = [row[i] for i in range(1, len(row), 4)]
         for n,box in enumerate(parts):
-            b = box.replace("[","").replace("]","")
-            if not b.isspace():
-                col[n].append(b)
+            if box != " ":
+                col[n].append(box)
 
     
     for move in movements:    
-        _,num,_,l1,_,l2  = move.split(" ")
+        _,num,_,l1,_,l2  = [int(a) if a.isdecimal() else None for a in move.split(" ")]
         poped = []
-        for n in range(int(num)):
-            poped.append(col[int(l1)-1].pop())
+        for n in range(num):
+            poped.append(col[l1-1].pop())
         poped.reverse()
         for p in poped:
-            col[int(l2)-1].append(p)
+            col[l2-1].append(p)
 
     print("".join([c[len(c)-1] for c in col]))
 
