@@ -1,5 +1,6 @@
 import time
 
+
 def main():
 
     with open('input') as f:
@@ -8,10 +9,10 @@ def main():
     count = 0
 
     for line in lines:
-        a,b = line.split(',')
+        a, b = line.split(',')
 
-        aMin,aMax = [int(a) for a in a.split('-')]
-        bMin,bMax = [int(b) for b in b.split('-')]
+        aMin, aMax = [int(a) for a in a.split('-')]
+        bMin, bMax = [int(b) for b in b.split('-')]
 
         # a contained in b
         if bMin <= aMin and aMax <= bMax:
@@ -21,15 +22,8 @@ def main():
         if aMin <= bMin and bMax <= aMax:
             count += 1
             continue
-        
 
-
-
-
-    
-    
     print(count)
-
 
 
 if __name__ == "__main__":

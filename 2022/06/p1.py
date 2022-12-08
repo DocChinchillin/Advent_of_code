@@ -1,5 +1,6 @@
 import time
 
+
 def main():
 
     with open('input') as f:
@@ -12,8 +13,6 @@ def main():
             # zanima nas zadnji znak, ki smo ga rabli
             print(n + 4)
             break
-        
-
 
 
 if __name__ == "__main__":
