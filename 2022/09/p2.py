@@ -20,8 +20,6 @@ def main():
             x = xMov + knots[0][0]
             y = yMov + knots[0][1]
             knots[0] = (x, y)
-            knots[1] = moveToHead(knots[0][0], knots[0][1],
-                                  knots[1][0], knots[1][1])
             for i in range(1, 10):
                 knots[i] = moveToHead(
                     knots[i-1][0], knots[i-1][1], knots[i][0], knots[i][1])
