@@ -25,7 +25,6 @@ def main():
 
     clk = 0
     x = 1
-    sum = 0
     mod = 40
     display = ""
 
@@ -49,8 +48,6 @@ def main():
             mod, display = flushDisplay(clk, mod, display)
 
             x += int(val)
-
-    print(sum)
 
 
 if __name__ == "__main__":
