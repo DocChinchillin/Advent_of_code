@@ -40,7 +40,7 @@ def main():
         lines = f.read().split('\n\n')
     sum = 0
     for i, line in zip(count(1), lines):
-        l1, l2 = line.split('\n')
+        l1, l2 = line.split('\n')[:2]
         # string to list
         l1 = ast.literal_eval(l1)
         l2 = ast.literal_eval(l2)
