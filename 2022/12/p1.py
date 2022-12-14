@@ -17,7 +17,7 @@ def isValid(x, y, grid, visited, cur):
 
     if ((x >= 0 and y >= 0) and
             (x < np.shape(grid)[1] and y < np.shape(grid)[0]) and (visited[y][x] == 0)):
-        next = ord(grid[y][x]) if np.all(grid[y][x] != 'E') else ord('z')
+        next = ord(grid[y][x]) if grid[y][x] != 'E' else ord('z')
         if next <= cur + 1:
             visited[y][x] = 1
             return True
@@ -47,10 +47,10 @@ def minDistance(grid):
         visited[source.col][source.row] = 1
 
         # Destination found;
-        if (np.any(grid[source.col][source.row] == 'E')):
+        if (grid[source.col][source.row] == 'E'):
             return source.dist
-        cur = ord(grid[source.col][source.row]) if np.all(
-            grid[source.col][source.row] != 'S') else ord('a')
+        cur = ord(grid[source.col][source.row]
+                  ) if grid[source.col][source.row] != 'S' else ord('a')
         # moving up
         if isValid(source.row - 1, source.col, grid, visited, cur):
             queue.append(QItem(source.row - 1, source.col, source.dist + 1))
@@ -72,7 +72,7 @@ def minDistance(grid):
 
 def main():
 
-    with open('input') as f:
+    with open('/home/doc/Desktop/Advent_of_code/2022/12/input') as f:
         lines = f.read().splitlines()
 
     cliff = np.array([np.array([c for c in line]) for line in lines])

@@ -53,8 +53,7 @@ def main():
     p2 = [[6]]
     all.append(p1)
     all.append(p2)
-    s = sorted(all, key=cmp_to_key(
-        lambda item1, item2: cmpLists(item2, item1)))
+    s = sorted(all, key=cmp_to_key(cmpLists), reverse=True)
 
     for i, a in zip(count(1), s):
         if a == p1 or a == p2:
