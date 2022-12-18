@@ -3,13 +3,13 @@ import numpy as np
 
 
 def checkSide(lava, y, x, z):
-    if 0 > y or y > 100:
+    if 0 > y or y >= 25:
         return 1
 
-    if 0 > x or x > 100:
+    if 0 > x or x >= 25:
         return 1
 
-    if 0 > z or z > 100:
+    if 0 > z or z >= 25:
         return 1
 
     if lava[y, x, z] == 0:
@@ -21,17 +21,18 @@ def main():
 
     with open('input') as f:
         lines = f.read().splitlines()
-
-    lava = np.zeros((100, 100, 100))
-
+    # max in every dir is about 20
+    lava = np.zeros((25, 25, 25))
+    locations = set()
     for line in lines:
         x, y, z = line.split(',')
         x = int(x)
         y = int(y)
         z = int(z)
+        locations.add((y, x, z))
         lava[y, x, z] = 1
     cnt = 0
-    for y, x, z in zip(*np.where(lava == 1)):
+    for y, x, z in locations:
         cnt += checkSide(lava, y + 1, x, z)
         cnt += checkSide(lava, y - 1, x, z)
         cnt += checkSide(lava, y, x+1, z)
